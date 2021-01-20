@@ -1,5 +1,5 @@
 class Task
-  attr_accessor :id, :title, :content
+  attr_accessor :id, :title, :content 
   @@count = 0
 
   def initialize(title:, content:)
@@ -32,12 +32,12 @@ class ToDo
   end
 
   def delete(id:)
-    @tasks.find{ |task| task.id == id }  
-    if @tasks.nil?
-      puts "【!】該当idのタスクはありません。"
+    @tasks.find { |task| task.id == id }  
+    if @tasks != nil?
+      puts "【!】該当idのタスクはありません。" 
     else
-     @tasks.delete(id)
-     puts "[削除] #{task.info}"     
+      @tasks.delete(task)
+      puts "[削除] #{task.info}"   
     end
   end
 end
